@@ -1,0 +1,166 @@
+body, h1 {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+header {
+    height: 80px;
+    background-color: #5f9ea0;
+    overflow: hidden;
+}
+
+nav {
+    width: 100vw;
+    height: 100px;
+    outline: 1px dashed black;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#nav_esq, #nav_dir {
+    display: inline-block;
+    vertical-align: 100%;
+    background: red;
+    width: 420px;
+    /* height: 50px; */
+}
+
+#nav_esq a, #nav_dir a {
+    margin: .4rem;
+    text-decoration: none;
+    color: black;
+    /* background-color: burlywood; */
+    padding: .2em .2em .2em .2em;
+
+    /* Transition */
+    transition: 
+        background-color .3s ease-out,
+        color .1s ease-out,
+        text-decoration .3s ease-out;
+}
+
+#nav_esq a:hover, #nav_dir a:hover {
+    background-color: #ad0000;
+    color: white;
+}
+
+#nav_logo {
+    display: inline-block;
+    background: green;
+    width: 50px;
+    height: 50px;
+}
+
+#nav_logo img {
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    text-align: center;
+    width: 100%;
+    height: 1000px;
+    background-color: #f7f7f7;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    height: 300px;
+    background-color: #ad0000;
+}
+
+.menu-atual {
+    background-color: white;
+}
+
+#contato-cont {
+    height: 550px;
+}
+
+#contato-form, #contato-img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 49%;
+    height: 100%;
+}
+
+#contato-form {
+    padding-top: .5rem;
+}
+
+#contato-img img {
+    width: 100%;
+    height: auto;
+    max-width: 80%;
+}
+
+/* Fieldsets, Inputs & Labels */
+#contato-form fieldset:not(#seletores-fieldset) input, 
+#contato-form fieldset:not(#seletores-fieldset) textarea
+{
+    width: 65%;
+    padding: .25rem;
+    float: right;
+    background-color: #e7e7e7;
+    font-size: 14px;
+    font-weight: 300;
+    border: none;
+    font-family: inherit;
+    outline: solid .05rem #ded5d5;
+    transition: border-radius .08s ease-out;
+}
+
+#contato-form fieldset input:focus-visible, #contato-form fieldset textarea:focus-visible {
+    border: none;
+    outline: solid .05rem black;
+    border-radius: .2rem / .3rem;
+}
+
+#contato-form fieldset textarea {
+    resize: vertical;
+    min-height: 1lh;
+    max-height: 8lh;
+}
+
+#contato-form fieldset:not(#seletores-fieldset) label {
+    float: left;
+    vertical-align: middle;
+}
+
+#contato-form fieldset:not(#seletores-fieldset) {
+    padding: .5rem;
+    display: block;
+    border: none;
+    text-align: left;
+}
+
+#seletores-fieldset {
+    margin: .8em;
+    border-radius: .2rem / .3rem;
+    background: #e7e7e7;
+    border: dotted .02rem #ded5d5;
+}
+
+/* Checkboxes */
+#seletores-fieldset input[type="checkbox"] {
+    width: 1em;
+    height: 1em;   
+}
+
+/* Botões */
+button {
+    width: 65%;
+    height: 30px;
+    float: right;
+}
+
+button:active {
+    box-shadow: inset rgba(200, 200, 200, 10) 2px 2px;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <title>Contato</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="nav_esq">
+                <a href="index.html">Home</a>
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="cardapio.html">Cardápio</a>
+                <a href="precos.html">Preços</a>
+                <a href="gift.html">Gift Card</a>
+            </div>
+            <div id="nav_logo">
+                <img src="img/logo.png">
+            </div>
+            <div id="nav_dir">
+                <a href="faq.html">Faq</a>
+                <a href="reservas.html">Reservas</a>
+                <a href="contato.html" class="menu-atual">Contato</a>
+                <a href="trabalhe.html">Trabalhe Conosco</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Contato</h1>
+        <div id="contato-cont">
+            <section>
+                <form id="contato-form" method="post">
+                    <fieldset>
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" required>
+                    </fieldset>
+                    <fieldset>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </fieldset>
+                    <fieldset>
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone">
+                    </fieldset>
+                    <fieldset>
+                        <label for="mensagem">Mensagem</label>
+                        <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
+                    </fieldset>
+                    <fieldset id="seletores-fieldset">
+                        <legend>Sexo</legend>
+                        <label for="masc">Masculino: </label>
+                        <input type="radio" name="sexo" id="masc">
+                        <label for="fem">Feminino: </label>
+                        <input type="radio" name="sexo" id="fem">    
+                        <label for="outro">Outro: </label>
+                        <input type="radio" name="sexo" id="outro">
+                    </fieldset>
+                    <fieldset>
+                        <button onclick="pede()">Pedir Dados</button>
+                        <button onclick="exibe()">Mostrar alerta</button>
+                    </fieldset>
+                </form>
+                <div id="contato-img">
+                    <img src="https://batelgrill.com.br/images/banner-contato.jpg">
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+    </footer>
+    <script src="/./js/codigos.js"></script>
+</body>
+</html>
