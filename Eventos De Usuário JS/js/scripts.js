@@ -1,15 +1,18 @@
 // Elementos da página
 let botaoEnviar = document.querySelector('button#enviar')
 let botaoCalcular = document.querySelector('button#calcular-idade')
+let botaoToggleFoto = document.querySelector('button#toggle-image')
 
 // Eventos de usuário
 botaoEnviar.addEventListener('click', lerDados)
 botaoCalcular.addEventListener('click', calculaIdade)
+botaoToggleFoto.addEventListener('click', trocarFoto)
 
 function lerDados() {
-    let nome = document.querySelector("#nome").value
-    let senha = document.querySelector("#senha").value
-    let resultDiv = document.querySelector("#section-pior-form .result")
+    let section = document.querySelector("#section-pior-form")
+    let nome = section.querySelector("#nome").value
+    let senha = section.querySelector("#senha").value
+    let resultDiv = section.querySelector(".result")
     let result = 
     `\
     Seu nome: ${nome}<br>
@@ -56,4 +59,18 @@ function calculaIdade() {
     // Display do resultado
     let resultDiv = section.querySelector(".result")
     resultDiv.innerHTML = result
+}
+
+function trocarFoto() {
+    let togglePaths = {
+        "img/pug-normal.png": "img/pug-loaf.png",
+        "img/pug-loaf.png": "img/pug-normal.png"
+    }
+
+    let section = document.querySelector("section#section-toggle-foto")
+    let image = section.querySelector("img")
+    let curImagePath = image.getAttribute("src")
+    let newImagePath = togglePaths[curImagePath]
+    
+    image.setAttribute("src", newImagePath)
 }
