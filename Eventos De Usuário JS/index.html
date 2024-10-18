@@ -8,15 +8,53 @@
 </head>
 <body>
     <main>
-        <form>
-            <h1 id="titulo">Eventos de Usuário JS</h1>
-            <input type="text" name="nome" id="nome">
-            <input type="password" name="senha" id="senha">
-        </form>
-        <div id="botoes">
-            <button type="submit" id="enviar">Enviar</button>
-            <button id="calcular-idade">Calcular Idade</button>
-        </div>
+        <h1 id="titulo">Eventos de Usuário JS</h1>
+        <!-- Formulário -->
+        <section id="section-pior-form">
+            <h2>O pior formulário do mundo</h2>
+            <div class="split-content">
+                <div>
+                    <form>
+                        <label for="nome">Seu nome: </label>
+                        <input type="text" name="nome" id="nome">
+                        <label for="senha">Sua senha: </label>
+                        <input type="password" name="senha" id="senha">
+                    </form>
+                    <div class="botoes-cont">
+                        <button type="submit" id="enviar">Enviar</button>
+                    </div>
+                </div>
+                <div class="result"></div>
+            </div>
+        </section>
+        <!-- Cálculo de idade -->
+        <section id="section-calculo-idade">
+            <h2>Sua idade em dias</h2>
+            <div class="split-content">
+                <div>
+                    <form>
+                        <label for="idade">Sua idade:</label>
+                        <input type="number" name="idade" id="idade" inputmode="numeric">
+                    </form>
+                    <div class="botoes-cont">
+                        <button id="calcular-idade">Calcular idade</button>
+                    </div>
+                </div>
+                <div class="result"></div>
+            </div>
+        </section>
+        <!-- Toggle de Foto -->
+        <section id="section-toggle-foto">
+            <h2>Fotinho de pug</h2>
+            <div class="split-content">
+                <div>
+                    <button>Transformar em pão</button>
+                </div>
+                <div class="result">
+                    
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 <script src="js/scripts.js"></script>

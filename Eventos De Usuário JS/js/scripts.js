@@ -7,16 +7,21 @@ botaoEnviar.addEventListener('click', lerDados)
 botaoCalcular.addEventListener('click', calculaIdade)
 
 function lerDados() {
-    let nome = document.querySelector("#nome").value;
-    let senha = document.querySelector("#senha").value;
-    let comando = `nome: ${nome}\nsenha: ${senha}`
+    let nome = document.querySelector("#nome").value
+    let senha = document.querySelector("#senha").value
+    let resultDiv = document.querySelector("#section-pior-form .result")
+    let result = 
+    `\
+    Seu nome: ${nome}<br>
+    Sua senha: ${senha}\
+    `
 
-    console.log(comando);
-    alert(comando);
+    resultDiv.innerHTML = result
 }
 
 function calculaIdade() {
-    let idade = Number(prompt("Insira sua idade: ") || 0)
+    let section = document.querySelector("#section-calculo-idade")
+    let idade = section.querySelector("#idade").value
     let dias = idade * 365
     
     // Contagem de anos bissextos
@@ -42,12 +47,13 @@ function calculaIdade() {
 
     // Resultado
     let result =
-    `
-    Ano de nascimento: ${anoAtual - idade}\n
-    Dias vividos: ${dias}\n
-    O número de dias vividos é ${parImpar} e ${divisivelPorTres}
+    `\
+    Ano de nascimento: ${anoAtual - idade}<br>
+    Dias vividos: ${dias}<br>
+    O número de dias vividos é ${parImpar} e ${divisivelPorTres}\
     `
 
-    console.log(result)
-    alert(result)
+    // Display do resultado
+    let resultDiv = section.querySelector(".result")
+    resultDiv.innerHTML = result
 }
