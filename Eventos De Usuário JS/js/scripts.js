@@ -62,15 +62,29 @@ function calculaIdade() {
 }
 
 function trocarFoto() {
-    let togglePaths = {
-        "img/pug-normal.png": "img/pug-loaf.png",
-        "img/pug-loaf.png": "img/pug-normal.png"
+    const pathAttributes = {
+        "img/pug-normal.png": {
+            togglePath: "img/pug-loaf.png",
+            shamingTextDisplay: "none",
+            alt: "Um close de um adorável pug que está olhando para a câmera"
+        },
+        "img/pug-loaf.png": {
+            togglePath: "img/pug-normal.png",
+            shamingTextDisplay: "block",
+            alt: "O pug, outrora feliz, agora se tornou um pão de forma. Ele está deitado no sofá com a linguinha de fora."
+        }
     }
 
-    let section = document.querySelector("section#section-toggle-foto")
-    let image = section.querySelector("img")
-    let curImagePath = image.getAttribute("src")
-    let newImagePath = togglePaths[curImagePath]
+    const section = document.querySelector("section#section-toggle-foto")
+
+    const image = section.querySelector("img")
+    const curImagePath = image.getAttribute("src")
+    const newImagePath = pathAttributes[curImagePath].togglePath
+
+    const shamingText = section.querySelector("#shaming-text")
     
+    shamingText.style.display = pathAttributes[newImagePath].shamingTextDisplay;
+
     image.setAttribute("src", newImagePath)
+    image.setAttribute("alt", pathAttributes[newImagePath].alt)
 }
