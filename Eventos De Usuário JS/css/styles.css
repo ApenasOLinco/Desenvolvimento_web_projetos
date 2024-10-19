@@ -17,6 +17,11 @@ section {
     margin-bottom: 1rem;
 }
 
+label {
+    display: block;
+    max-width: var(--largura-campos);
+}
+
 input {
     display: block;
 
@@ -75,4 +80,25 @@ div.result{
 #shaming-text {
     display: none;
     margin: 1rem 0 0 0;
+    font-weight: bolder;
+    color: red;
+}
+
+#section-numero-aleatorio .result {
+    display: grid;
+    gap: 1px;
+    justify-items: center;
+    align-items: center;
+
+    overflow-y: scroll;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    height: 200px;
+}
+
+#section-numero-aleatorio .result img {
+    display: inline-block;
+    width: 5rem;
+    height: auto;
 }

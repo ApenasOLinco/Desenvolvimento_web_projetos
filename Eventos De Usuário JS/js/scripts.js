@@ -1,12 +1,14 @@
 // Elementos da página
-let botaoEnviar = document.querySelector('button#enviar')
-let botaoCalcular = document.querySelector('button#calcular-idade')
-let botaoToggleFoto = document.querySelector('button#toggle-image')
+const botaoEnviar = document.querySelector('button#enviar')
+const botaoCalcular = document.querySelector('button#calcular-idade')
+const botaoToggleFoto = document.querySelector('button#toggle-image')
+const botaoGerarNumero = document.querySelector('button#gerar-numero')
 
 // Eventos de usuário
 botaoEnviar.addEventListener('click', lerDados)
 botaoCalcular.addEventListener('click', calculaIdade)
 botaoToggleFoto.addEventListener('click', trocarFoto)
+botaoGerarNumero.addEventListener('click', gerarNumero)
 
 function lerDados() {
     let section = document.querySelector("#section-pior-form")
@@ -87,4 +89,74 @@ function trocarFoto() {
 
     image.setAttribute("src", newImagePath)
     image.setAttribute("alt", pathAttributes[newImagePath].alt)
+}
+
+function gerarNumero() {
+    const section = document.querySelector("#section-numero-aleatorio")
+
+    const numMax = Number(section.querySelector("#num-max").value)
+    // const randomNum = Math.floor(Math.random() * (numMax + 1))
+    const randomNum = numMax
+    // console.log(`Max=${numMax}\nGerado=${randomNum}`);
+    
+    const resultDiv = section.querySelector(".result")
+    resultDiv.innerHTML = ''
+
+    let imagemHTML = '';
+
+    function criarImagem() {
+        const img = document.createElement('img')
+        img.src = "img/capybara.jpg"
+        img.alt = "Uma foto de corpo inteiro de uma capivara de perfil"
+        return img
+    }
+
+    // Método fragmento
+    (() => {
+        resultDiv.innerHTML = ''
+
+        console.time('fragmento')
+        let fragment = document.createDocumentFragment()
+        for(let i = 0; i < randomNum; i++) {
+            fragment.appendChild(criarImagem())
+        }
+
+        resultDiv.appendChild(fragment)
+        console.timeEnd('fragmento')
+    })();
+
+    // // Método inserção direta
+    // (() => {
+    //     resultDiv.innerHTML = ''
+
+    //     console.time('inserção')
+    //     for(let i = 0; i < randomNum; i++) {
+    //         resultDiv.appendChild(criarImagem())
+    //     }
+    //     console.timeEnd('inserção')
+    // })();
+
+    // // Método concatenação
+    // (() => {
+    //     resultDiv.innerHTML = ''
+
+    //     console.time('concatenacao')
+    //     for(let i = 0; i < randomNum; i++) {
+    //         imagemHTML += '<img src="img/capybara.jpg" alt="Uma foto de corpo inteiro de uma capivara de perfil">'
+    //     }
+    //     resultDiv.innerHTML = imagemHTML
+    //     console.timeEnd('concatenacao')
+    // })();
+
+    // Display de quantas imagens foram geradas
+    const imagensGeradasP = section.querySelector("p")
+    let imagensGeradas = '';
+
+    if(randomNum === 0) {
+        imagensGeradas = `<p>Nenhuma capivara foi gerada :(</p>`
+    }
+    else
+        imagensGeradas = `<p>${randomNum} ${randomNum == 1 ? 'capivara roliça foi gerada' : 'capivaras roliças foram geradas'}!</p>`
+
+    imagensGeradasP.innerHTML = imagensGeradas
 }
