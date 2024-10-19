@@ -102,3 +102,9 @@ div.result{
     width: 5rem;
     height: auto;
 }
+
+#section-cor-aleatoria, #section-cor-aleatoria h2 {
+    transition: background-color .3s ease-out, 
+        color .3s ease-out,
+        outline-color .3s ease-out;
+}
