@@ -56,12 +56,14 @@ export function trocarFoto() {
         "img/pug-normal.png": {
             togglePath: "img/pug-loaf.png",
             shamingTextDisplay: "none",
-            alt: "Um close de um adorável pug que está olhando para a câmera"
+            alt: "Um close de um adorável pug que está olhando para a câmera",
+            buttonText: "Transformar em pão"
         },
         "img/pug-loaf.png": {
             togglePath: "img/pug-normal.png",
             shamingTextDisplay: "block",
-            alt: "O pug, outrora feliz, agora se tornou um pão de forma. Ele está deitado no sofá com a linguinha de fora."
+            alt: "O pug, outrora feliz, agora se tornou um pão de forma. Ele está deitado no sofá com a linguinha de fora.",
+            buttonText: "Transformar em Pug"
         }
     }
 
@@ -77,14 +79,17 @@ export function trocarFoto() {
 
     image.setAttribute("src", newImagePath)
     image.setAttribute("alt", pathAttributes[newImagePath].alt)
+
+    const botaoToggleFoto = document.querySelector('button#toggle-image')
+    botaoToggleFoto.innerHTML = pathAttributes[newImagePath].buttonText
 }
 
 export function gerarNumero() {
     const section = document.querySelector("#section-numero-aleatorio")
 
     const numMax = Number(section.querySelector("#num-max").value)
-    // const randomNum = Math.floor(Math.random() * (numMax + 1))
-    const randomNum = numMax
+    const randomNum = Math.floor(Math.random() * (numMax + 1))
+    // const randomNum = numMax
     // console.log(`Max=${numMax}\nGerado=${randomNum}`);
     
     const resultDiv = section.querySelector(".result")
@@ -126,7 +131,7 @@ export function mudarCores() {
     const section = document.querySelector("#section-cor-aleatoria")
     const style = section.style
 
-    // Background, Color e Outline    
+    // Background, Color e Outline
     let cores = []
     for(let i = 0; i < 3; i++) {
         const [r, g, b] = Array.from({length: 3}, () => Math.floor(Math.random() * 256))
