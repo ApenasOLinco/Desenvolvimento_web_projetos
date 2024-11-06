@@ -1,0 +1,151 @@
+* {
+    outline: red solid 1px;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#cabecalho {
+    justify-self: center;
+    max-width: 1000px;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#cabecalho div {
+    display: inline-block;
+    background-color: red;
+    width: 15%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+#conteudo {
+    display: flex;
+    justify-content: space-between;
+    
+    max-width: 1000px;
+    height: auto;
+
+    margin: 10px auto;
+    background-color: turquoise;
+}
+
+#menu-lateral {
+    box-sizing: border-box;
+    min-width: 17%;
+    height: 100%;
+    text-align: end;
+    padding-block-start: .5rem;
+    padding-inline-end: .5rem;
+}
+
+#cont-principal {
+    min-width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#cont-galeria, #cont-tabela {
+    width: 100%;
+    height: 49.5%;
+}
+
+#cont-galeria {
+    display: flex;
+    justify-content: space-between;
+    max-height: 200px;
+    flex-wrap: wrap;
+}
+
+#cont-galeria article { 
+    width: 24%;
+    display: flex;
+    align-items: center;
+}
+
+#cont-galeria audio, #cont-galeria video {
+    width: 100%;
+}
+
+#cont-tabela {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    flex-grow: 1;
+    background-color: white;;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    width: 20%;
+    min-width: 30px;
+}
+
+#rodape {
+    background-color: azure;
+    margin: auto;
+    width: 100%;
+    height: 120px;
+}
+
+#ico-topo {
+    margin: auto;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 64px;
+}
+
+/* Desktop */
+@media(max-width: 1000px) {
+    #cabecalho {
+        width: 100%;
+        height: 450px;
+        background-color: red;
+        flex-wrap: wrap;
+    }
+
+    #cabecalho div {
+        width: 30%;
+        height: 45%;
+    }
+
+    #cont-galeria {
+        flex-wrap: wrap;
+        height: 800px;
+    }
+
+    #cont-galeria article {
+        height: 200px;
+        width: 45%;
+    }
+}
+
+@media(max-width: 700px) {
+    #cabecalho {
+        height: 700px
+    }
+
+    #cabecalho div {
+        width: 45%;
+        height: 30%;
+    }
+}
